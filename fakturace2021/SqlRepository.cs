@@ -15,16 +15,17 @@ namespace fakturace2021
             ConnString = connectionString;
         }
 
-        public List<Zakaznik> nactiZakazniky(string trideni,bool sestupne )
+        public List<Zakaznik> nactiZakazniky(string trideni,bool sestupne, string filter )
         {
             List<Zakaznik> zakaznici = new List<Zakaznik>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnString))
             {
                 using (SqlCommand sqlCommand = new SqlCommand("", sqlConnection))
                 {
-                    sqlCommand.CommandText = $"select * from Zakaznici order by {trideni}{(sestupne ? " desc" : "")}";
+                    sqlCommand.CommandText = $"select * from Zakaznici where Typzakaznika like @Filtr order by {trideni}{(sestupne ? " desc" : "")}";
+                    sqlCommand.Parameters.AddWithValue("Filtr", "%" + filter + "%");
                     sqlConnection.Open();
-
+                    //jmeno like @Hledani or prijmeni like @Hledani 
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                     {
                         while (dataReader.Read())

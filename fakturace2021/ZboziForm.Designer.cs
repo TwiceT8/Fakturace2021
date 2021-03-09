@@ -33,6 +33,8 @@ namespace fakturace2021
             this.NazevZbozi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cenaBezDph = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.naSklade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtBoxFiltrZbozi = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -63,15 +65,34 @@ namespace fakturace2021
             // 
             this.naSklade.Text = "Na skladě";
             // 
+            // txtBoxFiltrZbozi
+            // 
+            this.txtBoxFiltrZbozi.Location = new System.Drawing.Point(42, 53);
+            this.txtBoxFiltrZbozi.Name = "txtBoxFiltrZbozi";
+            this.txtBoxFiltrZbozi.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxFiltrZbozi.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Filtr";
+            // 
             // ZboziForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtBoxFiltrZbozi);
             this.Controls.Add(this.listView1);
             this.Name = "ZboziForm";
             this.Text = "ZboziForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -81,5 +102,7 @@ namespace fakturace2021
         private System.Windows.Forms.ColumnHeader NazevZbozi;
         private System.Windows.Forms.ColumnHeader cenaBezDph;
         private System.Windows.Forms.ColumnHeader naSklade;
+        private System.Windows.Forms.TextBox txtBoxFiltrZbozi;
+        private System.Windows.Forms.Label label1;
     }
 }

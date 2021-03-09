@@ -17,6 +17,7 @@ namespace fakturace2021
         private string[] sloupce = new string[] { "IdZakaznici", "Nazev", "TypZakaznika", "Adresa", "Ico","Email","Telefon" };
         private int trideni = 0;
         private bool sestupne;
+        private string filtr;
         public ZakazniciForm()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace fakturace2021
         }
         private void ZobrazData()
         {
-            zakaznici = sqlRepository.nactiZakazniky(sloupce[trideni], sestupne);
+            zakaznici = sqlRepository.nactiZakazniky(sloupce[trideni], sestupne, filtr);
             listView1.Items.Clear();
             foreach (var zakaznik in zakaznici)
             {
@@ -44,6 +45,14 @@ namespace fakturace2021
                 sestupne = !sestupne;
             }
             trideni = e.Column;
+            ZobrazData();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtr = comboBox1.SelectedItem.ToString();
+            if (filtr == "Vše")
+                filtr = "";
             ZobrazData();
         }
     }

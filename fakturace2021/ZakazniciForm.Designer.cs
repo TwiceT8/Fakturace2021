@@ -30,6 +30,7 @@ namespace fakturace2021
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
+            this.IdZakaznici = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nazev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Typ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Adresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,7 +38,6 @@ namespace fakturace2021
             this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Telefon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.IdZakaznici = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -59,6 +59,10 @@ namespace fakturace2021
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
+            // 
+            // IdZakaznici
+            // 
+            this.IdZakaznici.Text = "Id";
             // 
             // Nazev
             // 
@@ -99,10 +103,6 @@ namespace fakturace2021
             this.label1.TabIndex = 1;
             this.label1.Text = "filtr";
             // 
-            // IdZakaznici
-            // 
-            this.IdZakaznici.Text = "Id";
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -114,6 +114,7 @@ namespace fakturace2021
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.Text = "Vše";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // ZakazniciForm

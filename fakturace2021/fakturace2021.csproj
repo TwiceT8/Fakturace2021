@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakturaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FakturaceForm.Designer.cs">
+      <DependentUpon>FakturaceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,7 +60,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlRepository.cs" />
+    <Compile Include="ZakazniciForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZakazniciForm.Designer.cs">
+      <DependentUpon>ZakazniciForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zakaznik.cs" />
+    <Compile Include="ZboziForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZboziForm.Designer.cs">
+      <DependentUpon>ZboziForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FakturaceForm.resx">
+      <DependentUpon>FakturaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +89,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ZakazniciForm.resx">
+      <DependentUpon>ZakazniciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZboziForm.resx">
+      <DependentUpon>ZboziForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

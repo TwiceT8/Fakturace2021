@@ -74,5 +74,58 @@ namespace fakturace2021
             }
             return zbozis;
         }
+        public void ulozZbozi(Zbozi zbozi)
+        {
+            if (zbozi.IdZbozi == 0)
+            {
+                using (SqlConnection sqlConnection = new SqlConnection(connString))
+                {
+                    using (SqlCommand sqlCommand = new SqlCommand("", sqlConnection))
+                    {
+                        sqlCommand.CommandText = $"insert into Zbozi(Nazev, cenaBezDph, NaSklade) values(@Nazev,@Cena,@NaSklade)";
+                        sqlCommand.Parameters.AddWithValue("Nazev", zbozi.Nazev);
+                        sqlCommand.Parameters.AddWithValue("Cena", zbozi.CenaBezDph);
+                        sqlCommand.Parameters.AddWithValue("NaSklade", zbozi.NaSklade);
+                        sqlConnection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlConnection.Close();
+
+                    }
+                }
+            }
+            else
+            {
+                using (SqlConnection sqlConnection = new SqlConnection(connString))
+                {
+                    using (SqlCommand sqlCommand = new SqlCommand("", sqlConnection))
+                    {
+                        sqlCommand.CommandText = $"update Zbozi set Nazev=@Nazev,cenaBezDph=@cenaBezDph,NaSklade=@NaSklade where IdZbozi={zbozi.IdZbozi}";
+                        sqlCommand.Parameters.AddWithValue("Nazev", zbozi.Nazev);
+                        sqlCommand.Parameters.AddWithValue("cenaBezDph", zbozi.CenaBezDph);
+                        sqlCommand.Parameters.AddWithValue("NaSklade", zbozi.NaSklade);
+                        sqlConnection.Open();
+                        sqlCommand.ExecuteNonQuery();
+                        sqlConnection.Close();
+
+                    }
+                }
+            }
+        }
+
+        public void smazZbozi(Zbozi zbozi)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connString))
+            {
+                using (SqlCommand sqlCommand = new SqlCommand("", sqlConnection))
+                {
+                    sqlCommand.CommandText = $"delete from Zbozi where IdZbozi={zbozi.IdZbozi}";
+                    
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnection.Close();
+
+                }
+            }
+        }
     }
 }

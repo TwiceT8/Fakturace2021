@@ -21,6 +21,13 @@ namespace fakturace2021
             NaSklade = naSklade;
         }
 
+        public Zbozi(string nazev, int cenaBezDph, bool naSklade)
+        {
+            Nazev = nazev;
+            CenaBezDph = cenaBezDph;
+            NaSklade = naSklade;
+        }
+
         public ListViewItem GetListViewItem()
         {
             return new ListViewItem(new string[] { IdZbozi.ToString(), Nazev, CenaBezDph.ToString(), NaSklade.ToString() });

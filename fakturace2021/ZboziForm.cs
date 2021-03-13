@@ -60,8 +60,46 @@ namespace fakturace2021
 
         private void pridatZboziToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ZboziAddForm zboziAddForm = new ZboziAddForm();
-            zboziAddForm.ShowDialog();
+            ZboziAddForm zboziAddForm = new ZboziAddForm(new Zbozi("", 0,true));
+            if (zboziAddForm.ShowDialog() == DialogResult.OK)
+            {
+                sqlRepository.ulozZbozi(zboziAddForm.Zbozi);
+                
+                ZobrazData();
+            }
+        }
+
+        private void upravitZboziToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewItem lv = listView1.SelectedItems[0];
+            ZboziAddForm zboziAddForm = new ZboziAddForm(zbozis[listView1.SelectedIndices[0]]);
+            if (lv.SubItems[3].Text == true.ToString())
+            {
+                if (zboziAddForm.ShowDialog() == DialogResult.OK)
+                {
+                    sqlRepository.ulozZbozi(zboziAddForm.Zbozi);
+                    ZobrazData();
+                }
+                
+            }
+            else MessageBox.Show("Nelze upravit!");
+        }
+
+        private void odebratZboziToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewItem lv = listView1.SelectedItems[0];
+            ZboziAddForm zboziAddForm = new ZboziAddForm(zbozis[listView1.SelectedIndices[0]]);
+            if (lv.SubItems[3].Text == true.ToString())
+            {
+                var res = MessageBox.Show("Opravdu smazat "+ lv.SubItems[1].Text+"?", "Smazat", MessageBoxButtons.OKCancel);
+                if (res == DialogResult.OK)
+                {
+                    sqlRepository.smazZbozi(zboziAddForm.Zbozi);
+                    ZobrazData();
+                }
+
+            }
+            else MessageBox.Show("Nelze smazat!");
         }
     }
 }

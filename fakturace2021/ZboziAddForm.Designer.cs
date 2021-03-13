@@ -29,7 +29,7 @@ namespace fakturace2021
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBoxNazevAdd = new System.Windows.Forms.TextBox();
+            this.txtBoxZboziAdd = new System.Windows.Forms.TextBox();
             this.numericZboziAdd = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +38,12 @@ namespace fakturace2021
             ((System.ComponentModel.ISupportInitialize)(this.numericZboziAdd)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBoxNazevAdd
+            // txtBoxZboziAdd
             // 
-            this.txtBoxNazevAdd.Location = new System.Drawing.Point(102, 22);
-            this.txtBoxNazevAdd.Name = "txtBoxNazevAdd";
-            this.txtBoxNazevAdd.Size = new System.Drawing.Size(120, 20);
-            this.txtBoxNazevAdd.TabIndex = 0;
+            this.txtBoxZboziAdd.Location = new System.Drawing.Point(102, 22);
+            this.txtBoxZboziAdd.Name = "txtBoxZboziAdd";
+            this.txtBoxZboziAdd.Size = new System.Drawing.Size(120, 20);
+            this.txtBoxZboziAdd.TabIndex = 0;
             // 
             // numericZboziAdd
             // 
@@ -78,6 +78,7 @@ namespace fakturace2021
             this.btnPridat.TabIndex = 4;
             this.btnPridat.Text = "Pridat";
             this.btnPridat.UseVisualStyleBackColor = true;
+            this.btnPridat.Click += new System.EventHandler(this.btnPridat_Click);
             // 
             // btnStorno
             // 
@@ -87,6 +88,7 @@ namespace fakturace2021
             this.btnStorno.TabIndex = 5;
             this.btnStorno.Text = "Storno";
             this.btnStorno.UseVisualStyleBackColor = true;
+            this.btnStorno.Click += new System.EventHandler(this.btnStorno_Click);
             // 
             // ZboziAddForm
             // 
@@ -98,9 +100,10 @@ namespace fakturace2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericZboziAdd);
-            this.Controls.Add(this.txtBoxNazevAdd);
+            this.Controls.Add(this.txtBoxZboziAdd);
             this.Name = "ZboziAddForm";
             this.Text = "ZboziAddForm";
+            this.Load += new System.EventHandler(this.ZboziAddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericZboziAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,7 +112,7 @@ namespace fakturace2021
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBoxNazevAdd;
+        private System.Windows.Forms.TextBox txtBoxZboziAdd;
         private System.Windows.Forms.NumericUpDown numericZboziAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -39,6 +39,7 @@ namespace fakturace2021
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pridatZboziToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odebratZboziToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.upravitZboziToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +50,10 @@ namespace fakturace2021
             this.NazevZbozi,
             this.cenaBezDph,
             this.naSklade});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 79);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(733, 359);
             this.listView1.TabIndex = 1;
@@ -97,7 +100,8 @@ namespace fakturace2021
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pridatZboziToolStripMenuItem,
-            this.odebratZboziToolStripMenuItem});
+            this.odebratZboziToolStripMenuItem,
+            this.upravitZboziToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -116,6 +120,14 @@ namespace fakturace2021
             this.odebratZboziToolStripMenuItem.Name = "odebratZboziToolStripMenuItem";
             this.odebratZboziToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.odebratZboziToolStripMenuItem.Text = "Odebrat Zbozi";
+            this.odebratZboziToolStripMenuItem.Click += new System.EventHandler(this.odebratZboziToolStripMenuItem_Click);
+            // 
+            // upravitZboziToolStripMenuItem
+            // 
+            this.upravitZboziToolStripMenuItem.Name = "upravitZboziToolStripMenuItem";
+            this.upravitZboziToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.upravitZboziToolStripMenuItem.Text = "Upravit Zbozi";
+            this.upravitZboziToolStripMenuItem.Click += new System.EventHandler(this.upravitZboziToolStripMenuItem_Click);
             // 
             // ZboziForm
             // 
@@ -149,5 +161,6 @@ namespace fakturace2021
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pridatZboziToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odebratZboziToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem upravitZboziToolStripMenuItem;
     }
 }

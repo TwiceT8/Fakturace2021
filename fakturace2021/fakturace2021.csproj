@@ -68,6 +68,13 @@
       <DependentUpon>ZakazniciForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Zakaznik.cs" />
+    <Compile Include="Zbozi.cs" />
+    <Compile Include="ZboziAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZboziAddForm.Designer.cs">
+      <DependentUpon>ZboziAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZboziForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="ZakazniciForm.resx">
       <DependentUpon>ZakazniciForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZboziAddForm.resx">
+      <DependentUpon>ZboziAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZboziForm.resx">
       <DependentUpon>ZboziForm.cs</DependentUpon>
